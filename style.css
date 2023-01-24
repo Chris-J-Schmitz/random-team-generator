@@ -1,0 +1,17 @@
+/* Will adjust colors later*/
+
+
+body {
+    background-image: url(/assets/Background_Photo.webp);
+}
+
+.Top-bar {
+    
+    margin: auto;
+    height: 4em;
+}
+
+#title {
+    margin: 2px 5px 100px 2px;
+}
+
