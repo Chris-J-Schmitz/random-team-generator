@@ -71,9 +71,15 @@ function displayNames () {
 function randomIndex() {
     imageIndex = [];
 
-    for (let i = 0; i < imageIndexLength; i++) {
+    do {
+        // generate random number 
         let temp = Math.floor(Math.random() * 19);
-        imageIndex.push(temp);
-    } 
+        // add to array if it doesn't already exist
+        if (!imageIndex.includes(temp)) {
+            imageIndex.push(temp);
+        }
+    } while (imageIndex.length < imageIndexLength);
+
+   
 
 }
