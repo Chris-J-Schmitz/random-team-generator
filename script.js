@@ -19,10 +19,10 @@ const supportImage = document.getElementById("support-image");
 
 
 // Images
-const images = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dekker.webp","/assets/Drongo.webp","/assets/Countess.webp",
+const images = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dekker.webp","/assets/Drongo.webp",
 "/assets/Feng_Mao.webp","/assets/Gadget.webp","/assets/Gideon.webp","/assets/Howitzer.webp","/assets/Kallari.webp",
 "/assets/Khaimera.webp","/assets/Lt_Belica.webp","/assets/Murdock.webp","/assets/Muriel.webp","/assets/Narbash.webp",
-"/assets/Rampage.webp","/assets/Sevarog.webp","/assets/Sparrow.webp","/assets/Steel.webp","/assets/The_Fey.webp",];
+"/assets/Rampage.webp","/assets/Sevarog.webp","/assets/Sparrow.webp","/assets/Steel.webp","/assets/The_Fey.webp"];
 
 const imageIndexLength = 5;
 let imageIndex = [];
@@ -35,6 +35,10 @@ generate.addEventListener("click", function () {
     randomIndex()
     // Display the characters 
     displayImages();
+
+    for (let i = 0; i < 5; i ++ ) {
+        console.log(imageIndex[i]);
+    }
 });
 
 
@@ -65,9 +69,10 @@ function displayNames () {
 //Generate a list of 5 numbers to store in the imageIndex array 
 //to represent the 5 random characters
 function randomIndex() {
+    imageIndex = [];
 
     for (let i = 0; i < imageIndexLength; i++) {
-        let temp = Math.floor(Math.random() * 20);
+        let temp = Math.floor(Math.random() * 19);
         imageIndex.push(temp);
     } 
 
