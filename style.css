@@ -49,6 +49,7 @@ body {
 
 
 #individual-role p {
+    font-size: x-large;
     width: 100%;
     text-align: center;  
 }
@@ -62,4 +63,8 @@ body {
     max-height: 100%;
     padding-left: 25px;
     border-radius: 25%;
+}
+
+#disclaimer-message {
+    color: white;
 }

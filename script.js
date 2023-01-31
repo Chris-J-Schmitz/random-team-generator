@@ -17,6 +17,9 @@ const midLaneImage = document.getElementById("mid-image");
 const carryImage = document.getElementById("carry-image");
 const supportImage = document.getElementById("support-image");
 
+// Disclaimer
+const disclaimer = document.getElementById("disclaimer-message");
+
 
 // Images
 const images = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dekker.webp","/assets/Drongo.webp",
@@ -39,6 +42,9 @@ generate.addEventListener("click", function () {
     for (let i = 0; i < 5; i ++ ) {
         console.log(imageIndex[i]);
     }
+
+    disclaimer.innerHTML = "*this team composition is not meant to be ideal. This should only be done in a non ranked and a non competative environment with a premade team of 5 players";
+    
 });
 
 
