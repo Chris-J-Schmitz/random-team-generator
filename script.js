@@ -1,6 +1,9 @@
 // Variable Definitions
-//Button 
+//Generate Button 
 const generate = document.getElementById("generate-button");
+//Generate Type Button
+const correctButton = document.getElementById("correct-roles");
+const randomButton = document.getElementById("random-button");
 // Title Definition
 const title = document.getElementById("generate")
 //Lane div definitions
@@ -22,16 +25,22 @@ const disclaimer = document.getElementById("disclaimer-message");
 
 
 // Images
-const images = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dekker.webp","/assets/Drongo.webp",
+const randomImages = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dekker.webp","/assets/Drongo.webp",
 "/assets/Feng_Mao.webp","/assets/Gadget.webp","/assets/Gideon.webp","/assets/Howitzer.webp","/assets/Kallari.webp",
 "/assets/Khaimera.webp","/assets/Lt_Belica.webp","/assets/Murdock.webp","/assets/Muriel.webp","/assets/Narbash.webp",
 "/assets/Rampage.webp","/assets/Sevarog.webp","/assets/Sparrow.webp","/assets/Steel.webp","/assets/The_Fey.webp"];
 
-const imageIndexLength = 5;
+const teamSize = 5;
 let imageIndex = [];
 
-// On button click 
+
+
+// On generate button click 
 generate.addEventListener("click", function () {
+
+    //Check if random or correct roles
+    
+
     // Display names of the roles
     displayNames();
     // Generate the random characters 
@@ -52,11 +61,11 @@ generate.addEventListener("click", function () {
 //Display the photos of the characters
 function displayImages () {
     //display images
-    offlaneImage.src = images[imageIndex[0]];
-    jungleImage.src = images[imageIndex[1]];
-    midLaneImage.src = images[imageIndex[2]];
-    carryImage.src = images[imageIndex[3]];
-    supportImage.src = images[imageIndex[4]];
+    offlaneImage.src = randomImages[imageIndex[0]];
+    jungleImage.src = randomImages[imageIndex[1]];
+    midLaneImage.src = randomImages[imageIndex[2]];
+    carryImage.src = randomImages[imageIndex[3]];
+    supportImage.src = randomImages[imageIndex[4]];
 }
 
 
@@ -72,8 +81,8 @@ function displayNames () {
 }
 
 
-//Generate a list of 5 numbers to store in the imageIndex array 
-//to represent the 5 random characters
+/*Generate a list of 5 numbers to store in the imageIndex array 
+    to represent the 5 random characters */ 
 function randomIndex() {
     imageIndex = [];
 
@@ -84,8 +93,14 @@ function randomIndex() {
         if (!imageIndex.includes(temp)) {
             imageIndex.push(temp);
         }
-    } while (imageIndex.length < imageIndexLength);
+    } while (imageIndex.length < teamSize);
+}
 
-   
+/*
+Need to work on setting active button as white and changing
+the characters it chooses from. Depending on what button is active.  
+*/
+function activeOption()  {
+
 
 }

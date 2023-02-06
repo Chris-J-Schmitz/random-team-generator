@@ -1,4 +1,4 @@
-/* Will adjust colors later*/
+
 
 
 body {
@@ -6,7 +6,6 @@ body {
 }
 
 .Top-bar {
-    
     margin: auto;
     height: 4em;
 }
@@ -15,28 +14,49 @@ body {
     margin: 15px 50px 50px 2px;
 }
 
-#generate {
+#generate{
     padding-left: 20px;
     color: White;
+}
+
+.option-buttons button{
+    background-color: rgb(95, 94, 94); /* Green */
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 15px 35px;
+    margin-left: 20px;
+    margin-bottom: 15px;;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; 
+}
+
+.option.active {
+    background-color: rgb(255, 255, 255);
 }
 
 #generate-button {
     background-color: gray; /* Green */
     border-radius: 5px;
     color: rgb(0, 0, 0);
-    padding: 10px 25px;
-    margin-left: 40px;
+    padding: 15px 27px;
+    margin-left: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;  
 }
 
+#generate-button:active {
+    background-color: rgb(48, 47, 47);
+}
+
 .roles {
     color : white;
     display: flex;
     flex-wrap: grid;
-    margin-top: 75px;
+    margin-top: 40px;
 }
 
 #individual-role {
@@ -61,8 +81,10 @@ body {
     transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: 100%;
-    padding-left: 25px;
+    padding-left: 50px;
     border-radius: 25%;
+        
+    
 }
 
 #disclaimer-message {
