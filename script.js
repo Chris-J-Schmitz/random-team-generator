@@ -1,13 +1,16 @@
 // Variable Definitions
 //Generate Button 
 const generate = document.getElementById("generate-button");
+
 //Generate Type Button
 const correctButton = document.getElementById("correct-button");
 const randomButton = document.getElementById("random-button");
-let randomTeam = true;
+let randomTeam = false;
 const optionButtons = document.querySelectorAll("option-buttons");
+
 // Title Definition
 const title = document.getElementById("generate")
+
 //Lane div definitions
 const offlane = document.getElementById("offlane");
 const jungle = document.getElementById("jungle");
@@ -37,11 +40,20 @@ let imageIndex = [];
 
 
 
+
+
+
+
 // On generate button click 
 generate.addEventListener("click", function () {
 
     //Check if random or correct roles
-    
+    if(randomTeam) {
+        disclaimer.innerHTML = '*This team composition is not meant to be ideal. <br>' + 
+        'This should only be done in a non ranked and a non competative environment with a premade team of 5 players';
+    } else {
+        disclaimer.innerHTML = '';
+    }
 
     // Display names of the roles
     displayNames();
@@ -49,15 +61,8 @@ generate.addEventListener("click", function () {
     randomIndex()
     // Display the characters 
     displayImages();
-
-    for (let i = 0; i < 5; i ++ ) {
-        console.log(imageIndex[i]);
-    }
      
-    if(randomTeam) {
-        disclaimer.innerHTML = '*This team composition is not meant to be ideal. <br>' + 
-        'This should only be done in a non ranked and a non competative environment with a premade team of 5 players';
-    }
+    
 });
 
 
@@ -105,6 +110,26 @@ Need to work on setting active button as white and changing
 the characters it chooses from. Depending on what button is active.  
 */
 function activeOption()  {
+    randomButton.addEventListener("click", function (){
+        if (!randomTeam) {
+            randomTeam = true;
+            console.log("Now generating a random team");
+            randomButton.className = "option option-2 active";
+            correctButton.className = "option option-1 ";
+        }
+    })
 
+    correctButton.addEventListener("click", function () {
+        if (randomTeam) {
+            randomTeam = false;
+            console.log("Now generating a correct team");
+            correctButton.className = "option option-1 active";
+            randomButton.className = "option option-2 ";
+        }
+    })
 
 }
+// Have active option always running. 
+activeOption();
+
+
