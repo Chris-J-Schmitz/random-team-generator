@@ -80,8 +80,6 @@ function displayImages () {
 
 // Dispalay the rule names as well as changing the title
 function displayNames () {
-    title.innerHTML = "Good Luck!"
-    generate.innerHTML = "Generate Again"
     offlane.innerHTML = "Offlane";
     jungle.innerHTML = "Jungle";
     midLane.innerHTML = "Mid Lane";
@@ -113,7 +111,7 @@ function activeOption()  {
     randomButton.addEventListener("click", function (){
         if (!randomTeam) {
             randomTeam = true;
-            console.log("Now generating a random team");
+            title.innerHTML = "Generate A Random Team";
             randomButton.className = "option option-2 active";
             correctButton.className = "option option-1 ";
         }
@@ -122,7 +120,7 @@ function activeOption()  {
     correctButton.addEventListener("click", function () {
         if (randomTeam) {
             randomTeam = false;
-            console.log("Now generating a correct team");
+            title.innerHTML = "Generate A Team";
             correctButton.className = "option option-1 active";
             randomButton.className = "option option-2 ";
         }
