@@ -2,8 +2,10 @@
 //Generate Button 
 const generate = document.getElementById("generate-button");
 //Generate Type Button
-const correctButton = document.getElementById("correct-roles");
+const correctButton = document.getElementById("correct-button");
 const randomButton = document.getElementById("random-button");
+let randomTeam = true;
+const optionButtons = document.querySelectorAll("option-buttons");
 // Title Definition
 const title = document.getElementById("generate")
 //Lane div definitions
@@ -51,9 +53,11 @@ generate.addEventListener("click", function () {
     for (let i = 0; i < 5; i ++ ) {
         console.log(imageIndex[i]);
     }
-
-    disclaimer.innerHTML = "*this team composition is not meant to be ideal. This should only be done in a non ranked and a non competative environment with a premade team of 5 players";
-    
+     
+    if(randomTeam) {
+        disclaimer.innerHTML = '*This team composition is not meant to be ideal. <br>' + 
+        'This should only be done in a non ranked and a non competative environment with a premade team of 5 players';
+    }
 });
 
 
