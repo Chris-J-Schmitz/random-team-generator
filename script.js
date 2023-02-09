@@ -1,3 +1,26 @@
+/**
+ *  Predecessor team generator
+ * 
+ * Will Generate team compositions. 
+ *  - Either a team with characters in the correct roles
+ *  - Or characters in completely random roles. 
+ * 
+ * 
+ *  CURRENT OBJ: 
+ *  - Create a new array of photos for correct roles
+ *    For when the user chooses a correct team. 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
+
+
+
+
 // Variable Definitions
 //Generate Button 
 const generate = document.getElementById("generate-button");
