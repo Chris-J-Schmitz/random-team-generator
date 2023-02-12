@@ -72,7 +72,7 @@ generate.addEventListener("click", function () {
 
     //Check if random or correct roles
     if(randomTeam) {
-        disclaimer.innerHTML = '*This team composition is not meant to be ideal. <br>' + 
+        disclaimer.innerHTML = '*This random team composition is not meant to be ideal. <br>' + 
         'This should only be done in a non ranked and a non competative environment with a premade team of 5 players';
     } else {
         disclaimer.innerHTML = '';

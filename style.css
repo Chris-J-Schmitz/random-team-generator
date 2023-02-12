@@ -10,6 +10,7 @@ body {
     
 }
 
+
 .Top-bar {
     margin: auto;
     height: 4em;
@@ -61,7 +62,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 #individual-role {
@@ -98,4 +99,5 @@ body {
 
 #disclaimer-message {
     color: white;
+    text-align: center;
 }
