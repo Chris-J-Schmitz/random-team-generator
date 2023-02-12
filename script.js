@@ -48,6 +48,13 @@ const midLaneImage = document.getElementById("mid-image");
 const carryImage = document.getElementById("carry-image");
 const supportImage = document.getElementById("support-image");
 
+// Name Definitions
+const offlaneName = document.getElementById("offlane-name");
+const jungleName = document.getElementById("jungle-name");
+const midName = document.getElementById("mid-name");
+const carryName = document.getElementById("carry-name");
+const supportName = document.getElementById("support-name");
+
 // Disclaimer
 const disclaimer = document.getElementById("disclaimer-message");
 
@@ -57,6 +64,33 @@ const randomImages = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dek
 "/assets/Feng_Mao.webp","/assets/Gadget.webp","/assets/Gideon.webp","/assets/Howitzer.webp","/assets/Kallari.webp",
 "/assets/Khaimera.webp","/assets/Lt_Belica.webp","/assets/Murdock.webp","/assets/Muriel.webp","/assets/Narbash.webp",
 "/assets/Rampage.webp","/assets/Sevarog.webp","/assets/Sparrow.webp","/assets/Steel.webp","/assets/The_Fey.webp"];
+
+const randomTeamComp = {
+    "/assets/Countess.webp" : "Countess",
+    "/assets/Crunch.webp" : "Crunch",
+    "/assets/Dekker.webp": "Dekker",
+    "/assets/Drongo.webp" : "Drongo",
+    "/assets/Feng_Mao.webp" : "Feng Mao",
+    "/assets/Gadget.webp" : "Gadget",
+    "/assets/Gideon.webp" : "Gideon",
+    "/assets/Howitzer.webp" : "Howitzer",
+    "/assets/Kallari.webp" : "Kallari",
+    "/assets/Khaimera.webp" : "Khaimera",
+    "/assets/Lt_Belica.webp" : " Lt Belica",
+    "/assets/Murdock.webp" : "Murdock",
+    "/assets/Muriel.webp" : "Muriel",
+    "/assets/Narbash.webp" : "Narbash",
+    "/assets/Rampage.webp" : "Rampage",
+    "/assets/Sevarog.webp" : "Sevarog",
+    "/assets/Sparrow.webp" : "Sparrow",
+    "/assets/Steel.webp" : "Steel", 
+    "/assets/The_Fey.webp" : "The Fey"
+};
+
+
+
+
+
 
 const teamSize = 5;
 let imageIndex = [];
@@ -94,12 +128,16 @@ generate.addEventListener("click", function () {
 function displayImages () {
     //display images
     offlaneImage.src = randomImages[imageIndex[0]];
+    offlaneName.innerHTML = randomTeamComp[randomImages[imageIndex[0]]]
     jungleImage.src = randomImages[imageIndex[1]];
+    jungleName.innerHTML = randomTeamComp[randomImages[imageIndex[1]]]
     midLaneImage.src = randomImages[imageIndex[2]];
+    midName.innerHTML = randomTeamComp[randomImages[imageIndex[2]]]
     carryImage.src = randomImages[imageIndex[3]];
+    carryName.innerHTML = randomTeamComp[randomImages[imageIndex[3]]]
     supportImage.src = randomImages[imageIndex[4]];
+   supportName.innerHTML = randomTeamComp[randomImages[imageIndex[4]]]
 }
-
 
 // Dispalay the rule names as well as changing the title
 function displayNames () {
