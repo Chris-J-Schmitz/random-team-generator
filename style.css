@@ -1,10 +1,12 @@
 /* 
-    TO DO : Fix styling 
+    Fix background image styling. 
 */
 
 
 body {
-    background-color: black;
+    background-image: url(/assets/Background_Photo.webp) no-repeat center fixed;
+    background-size: cover;
+    background-color: rgb(22, 22, 22); 
     
 }
 
@@ -18,7 +20,7 @@ body {
 }
 
 #generate{
-    padding-left: 20px;
+    padding-left: 0px;
     color: White;
 }
 
@@ -56,39 +58,43 @@ body {
 }
 
 .roles {
-    color : white;
     display: flex;
-    flex-wrap: grid;
-    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px;
 }
 
 #individual-role {
-    width: 10%; /* adjust as desired */
-    height: 0;
-    padding-bottom: 20%; /* adjust as desired */
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    margin: 20px;
+}
+
+#individual-role img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px 5px rgb(33, 33, 33);
+}
+
+@media only screen and (max-width: 600px) {
+    #individual-role {
+        width:100%;
+        margin: 20px 0;
+    }
 }
 
 
 #individual-role p {
+    color: white;
     font-size: x-large;
     width: 100%;
     text-align: center;  
 }
 
-#individual-role img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    max-height: 100%;
-    padding-left: 50px;
-    border-radius: 25%;
-        
-    
-}
 
 #disclaimer-message {
     color: white;
