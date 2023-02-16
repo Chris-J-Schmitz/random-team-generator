@@ -12,8 +12,11 @@ body {
 
 
 .Top-bar {
-    margin: auto;
+    
+    padding-left: 2px;
+    max-width: 25%;
     height: 4em;
+    
 }
 
 #title {

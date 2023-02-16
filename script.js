@@ -113,7 +113,10 @@ generate.addEventListener("click", function () {
     }
 
     // Display names of the roles
+    /* 
+    Temporarily Removing the display names function
     displayNames();
+    */
     // Generate the random characters 
     randomIndex()
     // Display the characters 
@@ -140,6 +143,7 @@ function displayImages () {
 }
 
 // Dispalay the rule names as well as changing the title
+// Testing how it looks with the lane names as a constant through HTML 
 function displayNames () {
     offlane.innerHTML = "Offlane";
     jungle.innerHTML = "Jungle";
@@ -147,6 +151,7 @@ function displayNames () {
     carry.innerHTML = "Carry";
     support.innerHTML = "Support";
 }
+
 
 
 /*Generate a list of 5 numbers to store in the imageIndex array 
