@@ -65,6 +65,7 @@ const randomImages = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dek
 "/assets/Khaimera.webp","/assets/Lt_Belica.webp","/assets/Murdock.webp","/assets/Muriel.webp","/assets/Narbash.webp",
 "/assets/Rampage.webp","/assets/Sevarog.webp","/assets/Sparrow.webp","/assets/Steel.webp","/assets/The_Fey.webp"];
 
+// Images and names of characters in random order for random team generation
 const randomTeamComp = {
     "/assets/Countess.webp" : "Countess",
     "/assets/Crunch.webp" : "Crunch",
@@ -88,6 +89,42 @@ const randomTeamComp = {
 };
 
 
+
+// Images and character names in correct roles
+
+const offCharacter = {
+    "/assets/Crunch.webp" : "Crunch",
+    "/assets/Steel.webp" : "Steel",
+    "/assets/Sevarog.webp" : "Sevarog"
+};
+
+const jgCharacter = {
+    "/assets/Feng_Mao.webp" : "Feng Mao",
+    "/assets/Kallari.webp" : "Kallari",
+    "/assets/Khaimera.webp" : "Khaimera",
+    "/assets/Rampage.webp" : "Rampage"
+};
+
+const midCharacter = {
+    "/assets/Countess.webp" : "Countess",
+    "/assets/Gadget.webp" : "Gadget",
+    "/assets/Gideon.webp" : "Gideon",
+    "/assets/Howitzer.webp" : "Howitzer",
+    "/assets/The_Fey.webp" : "The Fey"
+};
+
+const carryCharacter = {
+    "/assets/Sparrow.webp" : "Sparrow",
+    "/assets/Murdock.webp" : "Murdock",
+    "/assets/Drongo.webp" : "Drongo"
+};
+
+const suppCharacter = {
+    "/assets/Muriel.webp" : "Muriel",
+    "/assets/Narbash.webp" : "Narbash",
+    "/assets/Dekker.webp": "Dekker",
+    "/assets/Lt_Belica.webp" : " Lt Belica"
+};
 
 
 
