@@ -85,6 +85,8 @@ const randomTeamComp = {
     "/assets/Shinbi.JPG" : "Shinbi",
 
 };
+const randomsize = Object.keys(randomTeamComp).length;
+
 
 
 
@@ -159,19 +161,26 @@ generate.addEventListener("click", function () {
     if(randomTeam) {
         disclaimer.innerHTML = '*This random team composition is not meant to be ideal. <br>' + 
         'This should only be done in a non ranked and a non competative environment with a premade team of 5 players';
+        
+        // Generate the random characters 
+        randomIndex()
+        console.log(imageIndex)
+        // Display the randomcharacters 
+        displayRandomImages();
+
+
     } else {
+        // Remove disclaimer
         disclaimer.innerHTML = '';
+
+        // Generate correct characters 
+        console.log("This should generate a correct team")
+
+        // Display the characters
     }
 
-    // Display names of the roles
-    /* 
-    Temporarily Removing the display names function
-    displayNames();
-    */
-    // Generate the random characters 
-    randomIndex()
-    // Display the characters 
-    displayImages();
+    
+
      
     
 });
@@ -179,7 +188,7 @@ generate.addEventListener("click", function () {
 
 
 //Display the photos of the characters
-function displayImages () {
+function displayRandomImages () {
     //display images
     offlaneImage.src = randomImages[imageIndex[0]];
     offlaneName.innerHTML = randomTeamComp[randomImages[imageIndex[0]]]
@@ -193,16 +202,6 @@ function displayImages () {
    supportName.innerHTML = randomTeamComp[randomImages[imageIndex[4]]]
 }
 
-// Dispalay the rule names as well as changing the title
-// Testing how it looks with the lane names as a constant through HTML 
-function displayNames () {
-    offlane.innerHTML = "Offlane";
-    jungle.innerHTML = "Jungle";
-    midLane.innerHTML = "Mid Lane";
-    carry.innerHTML = "Carry";
-    support.innerHTML = "Support";
-}
-
 
 
 /*Generate a list of 5 numbers to store in the imageIndex array 
@@ -212,7 +211,7 @@ function randomIndex() {
 
     do {
         // generate random number 
-        let temp = Math.floor(Math.random() * 19);
+        let temp = Math.floor(Math.random() * randomsize);
         // add to array if it doesn't already exist
         if (!imageIndex.includes(temp)) {
             imageIndex.push(temp);
@@ -220,10 +219,12 @@ function randomIndex() {
     } while (imageIndex.length < teamSize);
 }
 
-/*
-Need to work on setting active button as white and changing
-the characters it chooses from. Depending on what button is active.  
-*/
+// Generate a list of numbers to represent characters in the correct lanes
+
+
+
+//Changes the active button between correct and random roles
+//So user knows which type of team they are generating
 function activeOption()  {
     randomButton.addEventListener("click", function (){
         if (!randomTeam) {
