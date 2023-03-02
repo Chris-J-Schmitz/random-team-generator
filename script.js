@@ -6,13 +6,6 @@
  *  - Or characters in completely random roles. 
  * 
  * 
- *  CURRENT OBJ: 
- *  - Create a new array of photos for correct roles
- *    For when the user chooses a correct team. 
- * 
- * 
- * 
- * 
  */
 
 
@@ -85,39 +78,59 @@ const randomTeamComp = {
     "/assets/Sevarog.webp" : "Sevarog",
     "/assets/Sparrow.webp" : "Sparrow",
     "/assets/Steel.webp" : "Steel", 
-    "/assets/The_Fey.webp" : "The Fey"
+    "/assets/The_Fey.webp" : "The Fey",
+    "/assets/grux.JPG" : "Grux",
+    "/assets/Revenant.JPG" : "Revenant",
+    "/assets/Riktor.JPG" : "Riktor",
+    "/assets/Shinbi.JPG" : "Shinbi",
+
 };
 
 
 
 // Images and character names in correct roles
+// Followed by the number of characters in each role
 
 const offCharacter = {
+    "/assets/Countess.webp" : "Countess",
+    "/assets/grux.JPG" : "Grux",
+    "/assets/Feng_Mao.webp" : "Feng Mao",
     "/assets/Crunch.webp" : "Crunch",
+    "/assets/Riktor.JPG" : "Riktor",
+    "/assets/Shinbi.JPG" : "Shinbi",
     "/assets/Steel.webp" : "Steel",
+    "/assets/Kallari.webp" : "Kallari",
     "/assets/Sevarog.webp" : "Sevarog"
 };
+const offlaneSize = Object.keys(offCharacter).length;
+
 
 const jgCharacter = {
+    "/assets/Crunch.webp" : "Crunch",
     "/assets/Feng_Mao.webp" : "Feng Mao",
     "/assets/Kallari.webp" : "Kallari",
+    "/assets/grux.JPG" : "Grux",
     "/assets/Khaimera.webp" : "Khaimera",
     "/assets/Rampage.webp" : "Rampage"
 };
+const jgSize = Object.keys(jgCharacter).length;
 
 const midCharacter = {
     "/assets/Countess.webp" : "Countess",
     "/assets/Gadget.webp" : "Gadget",
     "/assets/Gideon.webp" : "Gideon",
     "/assets/Howitzer.webp" : "Howitzer",
+    "/assets/Lt_Belica.webp" : " Lt Belica",
     "/assets/The_Fey.webp" : "The Fey"
 };
+const midSize = Object.keys(midCharacter).length;
 
 const carryCharacter = {
     "/assets/Sparrow.webp" : "Sparrow",
     "/assets/Murdock.webp" : "Murdock",
     "/assets/Drongo.webp" : "Drongo"
 };
+const carrySize = Object.keys(carryCharacter).length;
 
 const suppCharacter = {
     "/assets/Muriel.webp" : "Muriel",
@@ -125,6 +138,7 @@ const suppCharacter = {
     "/assets/Dekker.webp": "Dekker",
     "/assets/Lt_Belica.webp" : " Lt Belica"
 };
+const suppSize = Object.keys(suppCharacter).length;
 
 
 
