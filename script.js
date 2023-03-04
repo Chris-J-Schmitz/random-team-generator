@@ -15,13 +15,13 @@
 
 
 // Variable Definitions
+let randomTeam = false;
 //Generate Button 
 const generate = document.getElementById("generate-button");
 
 //Generate Type Button
 const correctButton = document.getElementById("correct-button");
 const randomButton = document.getElementById("random-button");
-let randomTeam = false;
 const optionButtons = document.querySelectorAll("option-buttons");
 
 // Title Definition
@@ -52,40 +52,36 @@ const supportName = document.getElementById("support-name");
 const disclaimer = document.getElementById("disclaimer-message");
 
 
-// Images
-const randomImages = ["/assets/Countess.webp","/assets/Crunch.webp","/assets/Dekker.webp","/assets/Drongo.webp",
-"/assets/Feng_Mao.webp","/assets/Gadget.webp","/assets/Gideon.webp","/assets/Howitzer.webp","/assets/Kallari.webp",
-"/assets/Khaimera.webp","/assets/Lt_Belica.webp","/assets/Murdock.webp","/assets/Muriel.webp","/assets/Narbash.webp",
-"/assets/Rampage.webp","/assets/Sevarog.webp","/assets/Sparrow.webp","/assets/Steel.webp","/assets/The_Fey.webp"];
-
 // Images and names of characters in random order for random team generation
-const randomTeamComp = {
-    "/assets/Countess.webp" : "Countess",
-    "/assets/Crunch.webp" : "Crunch",
-    "/assets/Dekker.webp": "Dekker",
-    "/assets/Drongo.webp" : "Drongo",
-    "/assets/Feng_Mao.webp" : "Feng Mao",
-    "/assets/Gadget.webp" : "Gadget",
-    "/assets/Gideon.webp" : "Gideon",
-    "/assets/Howitzer.webp" : "Howitzer",
-    "/assets/Kallari.webp" : "Kallari",
-    "/assets/Khaimera.webp" : "Khaimera",
-    "/assets/Lt_Belica.webp" : " Lt Belica",
-    "/assets/Murdock.webp" : "Murdock",
-    "/assets/Muriel.webp" : "Muriel",
-    "/assets/Narbash.webp" : "Narbash",
-    "/assets/Rampage.webp" : "Rampage",
-    "/assets/Sevarog.webp" : "Sevarog",
-    "/assets/Sparrow.webp" : "Sparrow",
-    "/assets/Steel.webp" : "Steel", 
-    "/assets/The_Fey.webp" : "The Fey",
-    "/assets/grux.JPG" : "Grux",
-    "/assets/Revenant.JPG" : "Revenant",
-    "/assets/Riktor.JPG" : "Riktor",
-    "/assets/Shinbi.JPG" : "Shinbi",
+const randomTeamComp = [
 
-};
-const randomsize = Object.keys(randomTeamComp).length;
+    ["/assets/Countess.webp" , "Countess"],
+    ["/assets/Crunch.webp" , "Crunch"],
+    ["/assets/Dekker.webp", "Dekker"],
+    ["/assets/Drongo.webp" , "Drongo"],
+    ["/assets/Feng_Mao.webp" , "Feng Mao"],
+    ["/assets/Gadget.webp" , "Gadget"],
+    ["/assets/Gideon.webp" , "Gideon"],
+    ["/assets/Howitzer.webp" , "Howitzer"],
+    ["/assets/Kallari.webp" , "Kallari"],
+    ["/assets/Khaimera.webp" , "Khaimera"],
+    ["/assets/Lt_Belica.webp" , " Lt Belica"],
+    ["/assets/Murdock.webp" , "Murdock"],
+    ["/assets/Muriel.webp" , "Muriel"],
+    ["/assets/Narbash.webp" , "Narbash"],
+    ["/assets/Rampage.webp" , "Rampage"],
+    ["/assets/Sevarog.webp" , "Sevarog"],
+    ["/assets/Sparrow.webp" , "Sparrow"],
+    ["/assets/Steel.webp" , "Steel"] ,
+    ["/assets/The_Fey.webp" , "The Fey"],
+    ["/assets/grux.JPG" , "Grux"],
+    ["/assets/Revenant.JPG" , "Revenant"],
+    ["/assets/Riktor.JPG" , "Riktor"],
+    ["/assets/Shinbi.JPG" , "Shinbi"]
+];
+
+const randomsize = randomTeamComp.length;
+
 
 
 
@@ -104,7 +100,7 @@ const offCharacter = {
     "/assets/Kallari.webp" : "Kallari",
     "/assets/Sevarog.webp" : "Sevarog"
 };
-const offlaneSize = Object.keys(offCharacter).length;
+const offlaneSize = offCharacter.length;
 
 
 const jgCharacter = {
@@ -115,7 +111,7 @@ const jgCharacter = {
     "/assets/Khaimera.webp" : "Khaimera",
     "/assets/Rampage.webp" : "Rampage"
 };
-const jgSize = Object.keys(jgCharacter).length;
+const jgSize = jgCharacter.length;
 
 const midCharacter = {
     "/assets/Countess.webp" : "Countess",
@@ -125,14 +121,14 @@ const midCharacter = {
     "/assets/Lt_Belica.webp" : " Lt Belica",
     "/assets/The_Fey.webp" : "The Fey"
 };
-const midSize = Object.keys(midCharacter).length;
+const midSize = midCharacter.length;
 
 const carryCharacter = {
     "/assets/Sparrow.webp" : "Sparrow",
     "/assets/Murdock.webp" : "Murdock",
     "/assets/Drongo.webp" : "Drongo"
 };
-const carrySize = Object.keys(carryCharacter).length;
+const carrySize = carryCharacter.length;
 
 const suppCharacter = {
     "/assets/Muriel.webp" : "Muriel",
@@ -140,7 +136,7 @@ const suppCharacter = {
     "/assets/Dekker.webp": "Dekker",
     "/assets/Lt_Belica.webp" : " Lt Belica"
 };
-const suppSize = Object.keys(suppCharacter).length;
+const suppSize = suppCharacter.length;
 
 
 
@@ -185,13 +181,19 @@ generate.addEventListener("click", function () {
     
 });
 
-
+/**THIS NEEDS WORK. NEED TO FIGURE OUT WHY IMAGES WONT DISPLAY WITH ARRAYS */
 
 //Display the photos of the characters
 function displayRandomImages () {
     //display images
-    offlaneImage.src = randomImages[imageIndex[0]];
-    offlaneName.innerHTML = randomTeamComp[randomImages[imageIndex[0]]]
+    //testing
+    offlaneImage.src = "/assets/Crunch.webp";
+    offlaneName.innerHTML = "Crunch";
+
+    /*
+    offlaneImage.src = randomTeamComp[[imageIndex[0]][0]];
+    offlaneName.innerHTML = randomTeamComp[[imageIndex[0]][1]];
+    
     jungleImage.src = randomImages[imageIndex[1]];
     jungleName.innerHTML = randomTeamComp[randomImages[imageIndex[1]]]
     midLaneImage.src = randomImages[imageIndex[2]];
@@ -199,7 +201,7 @@ function displayRandomImages () {
     carryImage.src = randomImages[imageIndex[3]];
     carryName.innerHTML = randomTeamComp[randomImages[imageIndex[3]]]
     supportImage.src = randomImages[imageIndex[4]];
-   supportName.innerHTML = randomTeamComp[randomImages[imageIndex[4]]]
+   supportName.innerHTML = randomTeamComp[randomImages[imageIndex[4]]] */
 }
 
 
