@@ -79,7 +79,6 @@ const randomTeamComp = [
     ["/assets/Riktor.JPG" , "Riktor"],
     ["/assets/Shinbi.JPG" , "Shinbi"]
 ];
-
 const randomsize = randomTeamComp.length;
 
 
@@ -91,7 +90,7 @@ const randomsize = randomTeamComp.length;
 
 const offCharacter = [
     ["/assets/Countess.webp" , "Countess"],
-    ["/assets/grux.JPG" , "Grux"],
+    ["/assets/grux.webp" , "Grux"],
     ["/assets/Feng_Mao.webp" , "Feng Mao"],
     ["/assets/Crunch.webp" , "Crunch"],
     ["/assets/Riktor.JPG" , "Riktor"],
@@ -107,7 +106,7 @@ const jgCharacter = [
     ["/assets/Crunch.webp" , "Crunch"],
     ["/assets/Feng_Mao.webp" , "Feng Mao"],
     ["/assets/Kallari.webp" , "Kallari"],
-    ["/assets/grux.JPG" , "Grux"],
+    ["/assets/grux.webp" , "Grux"],
     ["/assets/Khaimera.webp" , "Khaimera"],
     ["/assets/Rampage.webp" , "Rampage"]
 ];
@@ -165,7 +164,6 @@ generate.addEventListener("click", function () {
         
         // Generate the random characters 
         randomIndex()
-        console.log(imageIndex)
         // Display the randomcharacters 
         displayRandomImages();
 
@@ -175,26 +173,20 @@ generate.addEventListener("click", function () {
         disclaimer.innerHTML = '';
 
         // Generate correct characters 
-        console.log("This should generate a correct team")
-
+        correctIndex();
         // Display the characters
+        displayCorrectImages();
+
     }
 
     
-
-     
     
 });
 
 
 
-//Display the photos of the characters
+//Display the photos of the characters in random roles
 function displayRandomImages () {
-    //display images
-    //testing
-    
-
-    
     offlaneImage.src = randomTeamComp[imageIndex[0]][0];
     offlaneName.innerHTML = randomTeamComp[imageIndex[0]][1];
     jungleImage.src = randomTeamComp[imageIndex[1]][0];
@@ -205,6 +197,20 @@ function displayRandomImages () {
     carryName.innerHTML = randomTeamComp[imageIndex[3]][1];
     supportImage.src = randomTeamComp[imageIndex[4]][0];
    supportName.innerHTML = randomTeamComp[imageIndex[4]][1];
+}
+
+//Display the photos of the characters in the correct roles
+function displayCorrectImages () {
+    offlaneImage.src = offCharacter[imageIndex[0]][0];
+    offlaneName.innerHTML = offCharacter[imageIndex[0]][1];
+    jungleImage.src = jgCharacter[imageIndex[1]][0];
+    jungleName.innerHTML = jgCharacter[imageIndex[1]][1];
+    midLaneImage.src = midCharacter[imageIndex[2]][0];
+    midName.innerHTML = midCharacter[imageIndex[2]][1];
+    carryImage.src = carryCharacter[imageIndex[3]][0];
+    carryName.innerHTML = carryCharacter[imageIndex[3]][1];
+    supportImage.src = suppCharacter[imageIndex[4]][0];
+   supportName.innerHTML = suppCharacter[imageIndex[4]][1];
 }
 
 
@@ -224,8 +230,42 @@ function randomIndex() {
     } while (imageIndex.length < teamSize);
 }
 
-// Generate a list of numbers to represent characters in the correct lanes
+/**
+ * Generate a list of numbers to represent characters in the correct lanes
+ * NEED TO FIX SO IT DOESN'T CHOOSE THE SAME CHARACTER FOR THE DIFFERENT LANES */ 
+function correctIndex() {
+    imageIndex = [];
 
+    //Generate Off Lane index
+    let temp = Math.floor(Math.random() * offLength);
+    imageIndex.push(temp);
+    //Generate Jungle index
+    temp = 0;
+    temp = Math.floor(Math.random() * jgLength);
+    imageIndex.push(temp);
+    //Generate Mid Lane index
+    temp = 0;
+    temp = Math.floor(Math.random() * midLength);
+    imageIndex.push(temp);
+    //Generate Carry index
+    temp = 0;
+    temp = Math.floor(Math.random() * carryLength);
+    imageIndex.push(temp);
+    //Generate Support index
+    temp = 0;
+    temp = Math.floor(Math.random() * suppLength);
+    imageIndex.push(temp);
+
+
+    do {
+        // generate random number 
+        let temp = Math.floor(Math.random() * randomsize);
+        // add to array if it doesn't already exist
+        if (!imageIndex.includes(temp)) {
+            imageIndex.push(temp);
+        }
+    } while (imageIndex.length < teamSize);
+}
 
 
 //Changes the active button between correct and random roles
