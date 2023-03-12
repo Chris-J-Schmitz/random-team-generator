@@ -149,6 +149,8 @@ const suppLength = suppCharacter.length;
  * To store randomly generated numbers to use for the character arrays */ 
 const teamSize = 5;
 let imageIndex = [];
+let id ;
+let ids = [];
 
 
 
@@ -166,9 +168,12 @@ generate.addEventListener("click", function () {
         
         // Generate the random characters 
         randomIndex()
+        
+        console.log("ids" + ids);
         // Display the randomcharacters 
         displayRandomImages();
-
+        
+        
 
     } else {
         // Remove disclaimer
@@ -176,6 +181,7 @@ generate.addEventListener("click", function () {
 
         // Generate correct characters 
         correctIndex();
+        
         // Display the characters
         displayCorrectImages();
 
@@ -241,46 +247,77 @@ function correctIndex() {
     imageIndex = [];
     // setting a blank array to hold the id's of the characters 
     //to ensure there are no duplicates 
-    let id = [];
+    id = 0;
+    ids = [];
 
     //Generate Off Lane index
     let temp = Math.floor(Math.random() * offLength);
     imageIndex.push(temp);
-    id.push(temp);
+    id = offCharacter[temp][2];
+    ids.push(id);
     
 
     //Generate Jungle index
     temp = 0;
-    temp = Math.floor(Math.random() * jgLength);
-    imageIndex.push(temp);
+    do {
+        // Generate a number
+        temp = Math.floor(Math.random() * jgLength);
+        id = jgCharacter[temp][2];
+        if (!ids.includes(id)) {
+            ids.push(id);
+            imageIndex.push(temp);
+        }
+
+    } while (imageIndex.length < 2)
+
+    
+    
+    
 
 
     //Generate Mid Lane index
     temp = 0;
-    temp = Math.floor(Math.random() * midLength);
-    imageIndex.push(temp);
+    do {
+        // Generate a number
+        temp = Math.floor(Math.random() * midLength);
+        id = midCharacter[temp][2];
+        if (!ids.includes(id)) {
+            ids.push(id);
+            imageIndex.push(temp);
+        }
+
+    } while (imageIndex.length < 3)
 
 
     //Generate Carry index
     temp = 0;
-    temp = Math.floor(Math.random() * carryLength);
-    imageIndex.push(temp);
+    do {
+        // Generate a number
+        temp = Math.floor(Math.random() * carryLength);
+        id = carryCharacter[temp][2];
+        if (!ids.includes(id)) {
+            ids.push(id);
+            imageIndex.push(temp);
+        }
+
+    } while (imageIndex.length < 4)
 
     
     //Generate Support index
     temp = 0;
-    temp = Math.floor(Math.random() * suppLength);
-    imageIndex.push(temp);
-
-
     do {
-        // generate random number 
-        let temp = Math.floor(Math.random() * randomsize);
-        // add to array if it doesn't already exist
-        if (!imageIndex.includes(temp)) {
+        // Generate a number
+        temp = Math.floor(Math.random() * suppLength);
+        id = suppCharacter[temp][2];
+        if (!ids.includes(id)) {
+            ids.push(id);
             imageIndex.push(temp);
         }
-    } while (imageIndex.length < teamSize);
+
+    } while (imageIndex.length < 5)
+
+
+    
 }
 
 
