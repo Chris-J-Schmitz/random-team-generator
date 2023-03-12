@@ -89,54 +89,56 @@ const randomsize = randomTeamComp.length;
 // Followed by the number of characters in each role
 
 const offCharacter = [
-    ["/assets/Countess.webp" , "Countess"],
-    ["/assets/grux.webp" , "Grux"],
-    ["/assets/Feng_Mao.webp" , "Feng Mao"],
-    ["/assets/Crunch.webp" , "Crunch"],
-    ["/assets/Riktor.JPG" , "Riktor"],
-    ["/assets/Shinbi.JPG" , "Shinbi"],
-    ["/assets/Steel.webp" , "Steel"],
-    ["/assets/Kallari.webp" , "Kallari"],
-    ["/assets/Sevarog.webp" , "Sevarog"]
+    ["/assets/Countess.webp" , "Countess" , 0],
+    ["/assets/grux.webp" , "Grux" , 19],
+    ["/assets/Feng_Mao.webp" , "Feng Mao" , 4],
+    ["/assets/Crunch.webp" , "Crunch" , 1],
+    ["/assets/Riktor.JPG" , "Riktor" , 21],
+    ["/assets/Shinbi.JPG" , "Shinbi" , 22],
+    ["/assets/Steel.webp" , "Steel" , 17],
+    ["/assets/Kallari.webp" , "Kallari" , 8],
+    ["/assets/Sevarog.webp" , "Sevarog" , 15]
 ];
 const offLength = offCharacter.length;
 
 
 const jgCharacter = [
-    ["/assets/Crunch.webp" , "Crunch"],
-    ["/assets/Feng_Mao.webp" , "Feng Mao"],
-    ["/assets/Kallari.webp" , "Kallari"],
-    ["/assets/grux.webp" , "Grux"],
-    ["/assets/Khaimera.webp" , "Khaimera"],
-    ["/assets/Rampage.webp" , "Rampage"]
+    ["/assets/Crunch.webp" , "Crunch" , 1],
+    ["/assets/Feng_Mao.webp" , "Feng Mao" , 4],
+    ["/assets/Kallari.webp" , "Kallari" , 8],
+    ["/assets/grux.webp" , "Grux" , 19],
+    ["/assets/Khaimera.webp" , "Khaimera" , 9],
+    ["/assets/Rampage.webp" , "Rampage" , 14]
 ];
 const jgLength = jgCharacter.length;
 
 
 const midCharacter = [
-    ["/assets/Countess.webp" , "Countess"],
-    ["/assets/Gadget.webp" , "Gadget"],
-    ["/assets/Gideon.webp" , "Gideon"],
-    ["/assets/Howitzer.webp" , "Howitzer"],
-    ["/assets/Lt_Belica.webp" , " Lt Belica"],
-    ["/assets/The_Fey.webp" , "The Fey"]
+    ["/assets/Countess.webp" , "Countess" , 0],
+    ["/assets/Gadget.webp" , "Gadget" , 5],
+    ["/assets/Gideon.webp" , "Gideon" , 6],
+    ["/assets/Howitzer.webp" , "Howitzer" , 7],
+    ["/assets/Lt_Belica.webp" , " Lt Belica" , 10],
+    ["/assets/The_Fey.webp" , "The Fey" , 18]
 ];
 const midLength = midCharacter.length;
 
 
 const carryCharacter = [
-    ["/assets/Sparrow.webp" , "Sparrow"],
-    ["/assets/Murdock.webp" , "Murdock"],
-    ["/assets/Drongo.webp" , "Drongo"]
+    ["/assets/Sparrow.webp" , "Sparrow" , 16],
+    ["/assets/Murdock.webp" , "Murdock" , 11],
+    ["/assets/Drongo.webp" , "Drongo" , 3]
+    ["/assets/Revenant.JPG" , "Revenant" , 20]
 ];
 const carryLength = carryCharacter.length;
 
 
 const suppCharacter = [
-    ["/assets/Muriel.webp" , "Muriel"],
-    ["/assets/Narbash.webp" , "Narbash"],
-    ["/assets/Dekker.webp", "Dekker"],
-    ["/assets/Lt_Belica.webp" , " Lt Belica"]
+    ["/assets/Muriel.webp" , "Muriel" , 12],
+    ["/assets/Narbash.webp" , "Narbash" , 13 ],
+    ["/assets/Dekker.webp", "Dekker" , 2],
+    ["/assets/Riktor.JPG" , "Riktor" , 21],
+    ["/assets/Lt_Belica.webp" , " Lt Belica" , 10]
 ];
 const suppLength = suppCharacter.length;
 
@@ -232,25 +234,39 @@ function randomIndex() {
 
 /**
  * Generate a list of numbers to represent characters in the correct lanes
- * NEED TO FIX SO IT DOESN'T CHOOSE THE SAME CHARACTER FOR THE DIFFERENT LANES */ 
+ * Will compare the already generated characters to ensure there are no duplicates
+ * due to some characters being playable in multiple roles
+ *  */ 
 function correctIndex() {
     imageIndex = [];
+    // setting a blank array to hold the id's of the characters 
+    //to ensure there are no duplicates 
+    let id = [];
 
     //Generate Off Lane index
     let temp = Math.floor(Math.random() * offLength);
     imageIndex.push(temp);
+    id.push(temp);
+    
+
     //Generate Jungle index
     temp = 0;
     temp = Math.floor(Math.random() * jgLength);
     imageIndex.push(temp);
+
+
     //Generate Mid Lane index
     temp = 0;
     temp = Math.floor(Math.random() * midLength);
     imageIndex.push(temp);
+
+
     //Generate Carry index
     temp = 0;
     temp = Math.floor(Math.random() * carryLength);
     imageIndex.push(temp);
+
+    
     //Generate Support index
     temp = 0;
     temp = Math.floor(Math.random() * suppLength);
