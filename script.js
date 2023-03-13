@@ -127,7 +127,7 @@ const midLength = midCharacter.length;
 const carryCharacter = [
     ["/assets/Sparrow.webp" , "Sparrow" , 16],
     ["/assets/Murdock.webp" , "Murdock" , 11],
-    ["/assets/Drongo.webp" , "Drongo" , 3]
+    ["/assets/Drongo.webp" , "Drongo" , 3],
     ["/assets/Revenant.JPG" , "Revenant" , 20]
 ];
 const carryLength = carryCharacter.length;
@@ -169,7 +169,6 @@ generate.addEventListener("click", function () {
         // Generate the random characters 
         randomIndex()
         
-        console.log("ids" + ids);
         // Display the randomcharacters 
         displayRandomImages();
         
@@ -252,9 +251,10 @@ function correctIndex() {
 
     //Generate Off Lane index
     let temp = Math.floor(Math.random() * offLength);
-    imageIndex.push(temp);
     id = offCharacter[temp][2];
     ids.push(id);
+    imageIndex.push(temp);
+    
     
 
     //Generate Jungle index
@@ -270,8 +270,6 @@ function correctIndex() {
 
     } while (imageIndex.length < 2)
 
-    
-    
     
 
 
@@ -327,7 +325,7 @@ function activeOption()  {
     randomButton.addEventListener("click", function (){
         if (!randomTeam) {
             randomTeam = true;
-            title.innerHTML = "Generate A Random Team";
+            title.innerHTML = "Generate a Random Team";
             randomButton.className = "option option-2 active";
             correctButton.className = "option option-1 ";
         }
@@ -336,7 +334,7 @@ function activeOption()  {
     correctButton.addEventListener("click", function () {
         if (randomTeam) {
             randomTeam = false;
-            title.innerHTML = "Generate A Team";
+            title.innerHTML = "Generate a Team";
             correctButton.className = "option option-1 active";
             randomButton.className = "option option-2 ";
         }
