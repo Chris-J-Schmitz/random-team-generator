@@ -77,7 +77,8 @@ const randomTeamComp = [
     ["/assets/grux.webp" , "Grux"],
     ["/assets/Revenant.JPG" , "Revenant"],
     ["/assets/Riktor.JPG" , "Riktor"],
-    ["/assets/Shinbi.JPG" , "Shinbi"]
+    ["/assets/Shinbi.JPG" , "Shinbi"],
+    ["/assets/kira.jpg" , "Kira"]
 ];
 const randomsize = randomTeamComp.length;
 
@@ -128,7 +129,8 @@ const carryCharacter = [
     ["/assets/Sparrow.webp" , "Sparrow" , 16],
     ["/assets/Murdock.webp" , "Murdock" , 11],
     ["/assets/Drongo.webp" , "Drongo" , 3],
-    ["/assets/Revenant.JPG" , "Revenant" , 20]
+    ["/assets/Revenant.JPG" , "Revenant" , 20],
+    ["/assets/kira.jpg" , "Kira" , 23]
 ];
 const carryLength = carryCharacter.length;
 
