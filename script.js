@@ -78,7 +78,8 @@ const randomTeamComp = [
     ["/assets/Revenant.JPG" , "Revenant"],
     ["/assets/Riktor.JPG" , "Riktor"],
     ["/assets/Shinbi.JPG" , "Shinbi"],
-    ["/assets/kira.jpg" , "Kira"]
+    ["/assets/kira.jpg" , "Kira"], 
+    
 ];
 const randomsize = randomTeamComp.length;
 
@@ -140,7 +141,8 @@ const suppCharacter = [
     ["/assets/Narbash.webp" , "Narbash" , 13 ],
     ["/assets/Dekker.webp", "Dekker" , 2],
     ["/assets/Riktor.JPG" , "Riktor" , 21],
-    ["/assets/Lt_Belica.webp" , " Lt Belica" , 10]
+    ["/assets/Lt_Belica.webp" , " Lt Belica" , 10], 
+    
 ];
 const suppLength = suppCharacter.length;
 
