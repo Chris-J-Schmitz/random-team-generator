@@ -1,6 +1,6 @@
 # random-team-generator
+Live Site : 
+https://www.predecessorteamgenerator.com/
 
-Will generate a random team composition for the game Predecessor. 
-The team composition is not meant to be ideal in the context of the game. 
-
-More features could be added in the future. 
+Will generate team compositions for the game Predecessor by Omeda Studios. 
+Teams can either be with characters in their correct roles or completely randomized roles. 
