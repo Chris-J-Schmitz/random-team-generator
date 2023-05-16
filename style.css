@@ -18,6 +18,14 @@ body {
     
 }
 
+@media all and (max-width: 400px) {
+    .Top-bar img{
+        margin: 0;
+        max-width: 325px;
+    }
+
+}
+
 #title {
     margin: 15px 50px 50px 2px;
 }
@@ -26,6 +34,16 @@ body {
     padding-left: 20px;
     color: White;
 }
+
+@media all and (max-width: 400px) {
+    #generate{
+        
+        text-align: center;
+    }
+
+}
+
+
 
 .option-buttons button{
     background-color: rgb(95, 94, 94); /* Green */
@@ -38,6 +56,25 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 20px; 
+}
+
+@media all and (max-width: 400px) {
+    .option-buttons {
+        display:flex;
+        flex-direction: row;
+        position: relative;
+        width: 150px;
+        
+    }
+    .generate-button {
+     justify-content: cetner;
+     align-items: center;
+     text-align: center;   
+    }
+
+    #generate-button{
+        width: 325px;
+    }
 }
 
 .option.active {
