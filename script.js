@@ -78,7 +78,10 @@ const randomTeamComp = [
     ["/assets/Revenant.JPG" , "Revenant"],
     ["/assets/Riktor.JPG" , "Riktor"],
     ["/assets/Shinbi.JPG" , "Shinbi"],
-    ["/assets/kira.jpg" , "Kira"], 
+    ["/assets/kira.jpg" , "Kira"],
+    ["/assets/Phase.jpg" , "Phase"],
+    ["/assets/Morigesh.jpg" , "Morigesh"]
+
     
 ];
 const randomsize = randomTeamComp.length;
@@ -121,7 +124,8 @@ const midCharacter = [
     ["/assets/Gideon.webp" , "Gideon" , 6],
     ["/assets/Howitzer.webp" , "Howitzer" , 7],
     ["/assets/Lt_Belica.webp" , " Lt Belica" , 10],
-    ["/assets/The_Fey.webp" , "The Fey" , 18]
+    ["/assets/The_Fey.webp" , "The Fey" , 18],
+    ["/assets/Morigesh.jpg" , "Morigesh", 25]
 ];
 const midLength = midCharacter.length;
 
@@ -142,6 +146,7 @@ const suppCharacter = [
     ["/assets/Dekker.webp", "Dekker" , 2],
     ["/assets/Riktor.JPG" , "Riktor" , 21],
     ["/assets/Lt_Belica.webp" , " Lt Belica" , 10], 
+    ["/assets/Phase.jpg" , "Phase", 24],
     
 ];
 const suppLength = suppCharacter.length;
